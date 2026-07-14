@@ -79,12 +79,6 @@ npm run build     # output in _site/
 npm run serve     # local preview
 ```
 
-## Contributing &amp; commit policy
-
-This repository is maintained solely by the **`spatialdataarchival`** account. **All commits are
-authored by that single account with no co-authors and no additional `Co-authored-by` trailers.**
-Please preserve this convention in any change.
-
 ## License &amp; usage
 
 © Spatial Data Archival & Cold Storage Optimization. Content is published for reference at
