@@ -1,0 +1,116 @@
+{%- set isHome = page.url == "/" -%}
+{%- set isArticle = tags and "contentPage" in tags -%}
+{%- set _titlePart = seoTitle if seoTitle else title -%}
+{%- set pageTitle = site.name if isHome else (_titlePart + " · " + site.shortName) -%}
+{%- set desc = metaDescription if metaDescription else site.metaDescription -%}
+{%- set canonical = page.url | absoluteUrl(site.url) -%}
+{%- set ogImage = "/assets/icons/og-image.png" | absoluteUrl(site.url) -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ desc }}">
+<link rel="canonical" href="{{ canonical }}">
+{%- if noindex %}
+<meta name="robots" content="noindex, follow">
+{%- endif %}
+<meta name="theme-color" content="{{ site.themeColor }}">
+<meta name="color-scheme" content="light">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="{{ 'article' if isArticle else 'website' }}">
+<meta property="og:site_name" content="{{ site.shortName }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:image" content="{{ ogImage }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ desc }}">
+<meta name="twitter:image" content="{{ ogImage }}">
+
+<!-- Icons & PWA -->
+<link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="{{ site.shortName }}">
+<meta name="application-name" content="{{ site.shortName }}">
+
+{%- if isArticle %}
+<!-- KaTeX (vendored locally) -->
+<link rel="stylesheet" href="/assets/katex/katex.min.css">
+<script defer src="/assets/katex/katex.min.js"></script>
+<script defer src="/assets/katex/auto-render.min.js"></script>
+{%- endif %}
+
+<!-- Structured data -->
+{%- if isHome %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.name | dump | safe }},
+  "url": {{ site.url | dump | safe }},
+  "description": {{ site.description | dump | safe }},
+  "inLanguage": "{{ site.lang }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.shortName | dump | safe }},
+    "logo": { "@type": "ImageObject", "url": {{ ogImage | dump | safe }} }
+  }
+}
+</script>
+{%- elif isArticle %}
+{%- set crumbs = page.url | breadcrumbs(collections.contentPage) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ desc | dump | safe }},
+  "url": {{ canonical | dump | safe }},
+  "inLanguage": "{{ site.lang }}",
+  "image": {{ ogImage | dump | safe }},
+  "dateModified": {{ (page.date | isoDate) | dump | safe }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ canonical | dump | safe }} },
+  "isPartOf": { "@type": "WebSite", "name": {{ site.name | dump | safe }}, "url": {{ site.url | dump | safe }} },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.shortName | dump | safe }},
+    "logo": { "@type": "ImageObject", "url": {{ ogImage | dump | safe }} }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {%- for c in crumbs %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": {{ c.title | dump | safe }},
+      "item": {{ (c.url | absoluteUrl(site.url)) | dump | safe }}
+    }{{ "," if not loop.last }}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ pageTitle | dump | safe }},
+  "description": {{ desc | dump | safe }},
+  "url": {{ canonical | dump | safe }},
+  "inLanguage": "{{ site.lang }}",
+  "isPartOf": { "@type": "WebSite", "name": {{ site.name | dump | safe }}, "url": {{ site.url | dump | safe }} }
+}
+</script>
+{%- endif %}

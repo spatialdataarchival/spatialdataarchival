@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="{{ site.shortName }} — home">
+      <img src="/assets/img/logo.svg" alt="" width="34" height="34">
+      <span class="brand-text">Spatial Data Archival<span class="brand-sub"> · Cold Storage</span></span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false"
+            aria-controls="primary-nav" aria-label="Toggle navigation menu">
+      {% icon "menu", "icon-open" %}{% icon "close", "icon-close" %}
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        {%- for item in nav.primary %}
+        {%- set current = (page.url == item.url) or (item.url != "/" and page.url.startsWith(item.url)) %}
+        <li>
+          <a href="{{ site.url }}{{ item.url }}"{% if current %} aria-current="page"{% endif %}>
+            {% icon item.icon %}<span>{{ item.short }}</span>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+# Cloudflare Workers — static-assets deployment of the built Eleventy site.
+# `wrangler deploy` uploads ./_site and serves it from a Worker (no script needed).
+name = "spatialdataarchival-org"
+compatibility_date = "2025-11-01"
+
+[assets]
+directory = "./_site"
+# Serve /foo/index.html at /foo/ and redirect /foo -> /foo/.
+html_handling = "auto-trailing-slash"
+# Serve the generated 404 page (with a 404 status) for unknown paths.
+not_found_handling = "404-page"

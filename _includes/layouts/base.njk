@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  {% include "partials/head-meta.njk" %}
+  <link rel="stylesheet" href="/assets/css/styles.css?v={{ assets.stylesCss }}">
+  <link rel="stylesheet" href="/assets/css/prism-light.css?v={{ assets.prismLightCss }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/app.js?v={{ assets.appJs }}" defer></script>
+</body>
+</html>

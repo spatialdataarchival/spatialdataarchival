@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Spatial Data Archival icon">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#0b4a45"/>
+    </linearGradient>
+    <linearGradient id="fAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcd34d"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="fGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6ee7b7"/>
+      <stop offset="1" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="fTeal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#fbg)"/>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="M32 40 L52 46 L32 52 L12 46 Z" fill="url(#fTeal)"/>
+    <path d="M32 25 L52 31 L32 37 L12 31 Z" fill="url(#fGreen)"/>
+    <path d="M32 10 L52 16 L32 22 L12 16 Z" fill="url(#fAmber)"/>
+  </g>
+</svg>

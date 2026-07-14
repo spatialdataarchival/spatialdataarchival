@@ -1,0 +1,29 @@
+{%- set children = page.url | childrenOf(collections.contentPage) -%}
+{%- set siblings = page.url | siblingsOf(collections.contentPage) -%}
+
+{%- if children | length %}
+<section class="related section-children" aria-label="Pages in this section">
+  <h2>Explore this section</h2>
+  <div class="related-grid">
+    {%- for child in children %}
+    <a class="related-card" href="{{ site.url }}{{ child.url }}">
+      <span class="rc-title">{% icon "arrow" %}{{ child.title }}</span>
+      {%- if child.summary %}<p>{{ child.summary }}</p>{%- endif %}
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{%- if siblings | length %}
+<section class="related" aria-label="Related pages">
+  <h2>Related pages</h2>
+  <div class="related-grid">
+    {%- for sib in siblings %}
+    <a class="related-card" href="{{ site.url }}{{ sib.url }}">
+      <span class="rc-title">{% icon "layers" %}{{ sib.title }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}

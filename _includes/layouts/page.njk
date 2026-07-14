@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+<article class="page-wrap">
+  <div class="container">
+    {% include "partials/breadcrumbs.njk" %}
+    <div class="content-shell">
+      <div class="prose">
+        {{ content | safe }}
+      </div>
+      {% include "partials/related.njk" %}
+    </div>
+  </div>
+</article>

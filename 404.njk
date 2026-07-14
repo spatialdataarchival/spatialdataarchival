@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+permalink: /404.html
+eleventyExcludeFromCollections: true
+noindex: true
+title: Page not found
+metaDescription: The page you requested could not be found. Browse our guides on geospatial archival, cold storage optimization, and spatial format conversion.
+---
+<section class="hero">
+  <div class="container">
+    <img class="hero-logo" src="/assets/img/logo.svg" width="120" height="120" alt="">
+    <h1>Page not found</h1>
+    <p class="lede">That page doesn't exist or has moved. Try one of the main
+      sections, or head back to the homepage.</p>
+    <div class="cta-grid" style="margin-top:32px">
+      <a class="cta-card" href="{{ site.url }}/compression-tuning-storage-optimization/">
+        <span class="cta-ico c1">{% icon "compression" %}</span>
+        <h3>Compression &amp; Storage</h3>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/">
+        <span class="cta-ico c2">{% icon "architecture" %}</span>
+        <h3>Archival Architecture</h3>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/format-conversion-pipeline-automation/">
+        <span class="cta-ico c3">{% icon "conversion" %}</span>
+        <h3>Conversion &amp; Pipelines</h3>
+      </a>
+    </div>
+    <p style="margin-top:24px"><a class="cta-more" href="{{ site.url }}/">Return home {% icon "arrow" %}</a></p>
+  </div>
+</section>

@@ -1,0 +1,169 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero">
+  <div class="container">
+    <img class="hero-logo" src="/assets/img/logo.svg" width="156" height="156"
+         alt="Spatial Data Archival & Cold Storage Optimization logo">
+    <p class="hero-tagline">Geospatial Data Lifecycle &amp; Cold Storage</p>
+    <h1>Spatial Data Archival &amp; Cold Storage Optimization</h1>
+    <p class="lede">
+      A production-focused operational reference for geospatial data lifecycle
+      management, cold storage optimization, and compliance automation.
+    </p>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="container">
+    <div class="cta-grid">
+      <a class="cta-card" href="{{ site.url }}/compression-tuning-storage-optimization/">
+        <span class="cta-ico c1">{% icon "compression" %}</span>
+        <h3>Compression &amp; Storage</h3>
+        <p>Tune ZSTD, size row groups, encode GIS attributes, and partition
+          spatially to shrink cold-storage footprint without sacrificing
+          retrieval SLAs.</p>
+        <span class="cta-more">Explore compression tuning {% icon "arrow" %}</span>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/">
+        <span class="cta-ico c2">{% icon "architecture" %}</span>
+        <h3>Archival Architecture</h3>
+        <p>Design hot/warm/cold tiers, select object storage, catalog metadata,
+          and codify retention with policy-as-code for legally defensible
+          archives.</p>
+        <span class="cta-more">Explore tiering strategy {% icon "arrow" %}</span>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/format-conversion-pipeline-automation/">
+        <span class="cta-ico c3">{% icon "conversion" %}</span>
+        <h3>Conversion &amp; Pipelines</h3>
+        <p>Migrate to GeoParquet and FlatGeobuf, validate schemas and CRS, and
+          automate idempotent, compliance-ready conversion pipelines.</p>
+        <span class="cta-more">Explore pipeline automation {% icon "arrow" %}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-block" style="padding-top:0">
+  <div class="container">
+    <div class="section-intro">
+      <h2>An operational reference, not a brochure</h2>
+    </div>
+    <div class="home-prose">
+      <p>
+        Geospatial archives grow at an unsustainable rate. Raster mosaics, LiDAR
+        point clouds, historical basemaps, and continuous sensor telemetry each
+        demand distinct lifecycle handling. This site is a hands-on field guide
+        for the engineers and archivists who keep petabyte-scale spatial data
+        affordable, retrievable, and audit-ready.
+      </p>
+      <p>
+        It is written for <strong>data engineers, GIS archivists, cloud
+        architects, and compliance/operations teams</strong>. Every page favors
+        concrete configuration over theory: copy-ready CLI commands, PyArrow and
+        DuckDB snippets, Terraform lifecycle rules, validation thresholds, and
+        root-cause troubleshooting tables you can apply directly to production
+        pipelines.
+      </p>
+      <p>
+        The material is organized into three connected disciplines —
+        <a href="{{ site.url }}/compression-tuning-storage-optimization/">compression and
+        storage optimization</a>, <a href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/">archival
+        architecture and tiering</a>, and <a href="{{ site.url }}/format-conversion-pipeline-automation/">format
+        conversion and pipeline automation</a> — each drilling from a strategic
+        overview down to focused, task-level playbooks.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-block" style="padding-top:0">
+  <div class="container">
+    <div class="section-intro">
+      <h2>What's inside</h2>
+      <p>Three top-level sections, each branching into focused categories and
+        deep, step-by-step articles.</p>
+    </div>
+    <div class="cta-grid">
+      <a class="cta-card" href="{{ site.url }}/compression-tuning-storage-optimization/">
+        <span class="cta-ico c1">{% icon "database" %}</span>
+        <h3>Compression Tuning &amp; Storage Optimization</h3>
+        <p>ZSTD level configuration, row-group sizing, dictionary encoding for
+          categorical GIS fields, and spatial partitioning techniques.</p>
+        <span class="cta-more">Open section {% icon "arrow" %}</span>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/">
+        <span class="cta-ico c2">{% icon "shield" %}</span>
+        <h3>Spatial Archival Architecture &amp; Tiering</h3>
+        <p>Hot/warm/cold tier design, object-storage selection, metadata
+          cataloging and discovery, and retention policy frameworks.</p>
+        <span class="cta-more">Open section {% icon "arrow" %}</span>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/format-conversion-pipeline-automation/">
+        <span class="cta-ico c3">{% icon "globe" %}</span>
+        <h3>Format Conversion &amp; Pipeline Automation</h3>
+        <p>GeoParquet migration workflows, FlatGeobuf optimization, schema
+          mapping and attribute validation, and CRS synchronization.</p>
+        <span class="cta-more">Open section {% icon "arrow" %}</span>
+      </a>
+      <a class="cta-card" href="{{ site.url }}/spatial-archive-cost-modeling/">
+        <span class="cta-ico c1">{% icon "database" %}</span>
+        <h3>Spatial Archive Cost Modeling</h3>
+        <p>One cross-cutting model for storage-class pricing, retrieval and
+          request fees, early-deletion penalties, and compression-ratio tables —
+          the numbers behind every tiering decision.</p>
+        <span class="cta-more">Open the cost reference {% icon "arrow" %}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-block" style="padding-top:0">
+  <div class="container">
+    <div class="section-intro">
+      <h2>Start here</h2>
+      <p>New to the reference? These end-to-end playbooks are the fastest way to
+        see how the methodology applies to real production archives.</p>
+    </div>
+    <div class="related">
+      <div class="related-grid">
+        <a class="related-card" href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/hotwarmcold-tier-design-for-geospatial-data/how-to-design-a-3-tier-spatial-storage-architecture/">
+          <span class="rc-title">{% icon "architecture" %} How to Design a 3-Tier Spatial Storage Architecture</span>
+          <p>Map hot/warm/cold tiers to retrieval SLAs and codify the transitions as lifecycle policy.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/format-conversion-pipeline-automation/geoparquet-migration-workflows/converting-legacy-shapefiles-to-geoparquet-at-scale/">
+          <span class="rc-title">{% icon "conversion" %} Converting Legacy Shapefiles to GeoParquet at Scale</span>
+          <p>A deterministic, validation-gated pipeline for migrating bulk shapefile estates to columnar archives.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/compression-tuning-storage-optimization/zstd-level-configuration-for-spatial-files/tuning-zstd-compression-for-geoparquet-archives/">
+          <span class="rc-title">{% icon "compression" %} Tuning ZSTD Compression for GeoParquet Archives</span>
+          <p>Pick compression levels that shrink cold-tier footprint without breaking query performance.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/object-storage-selection-for-gis-archives/aws-s3-vs-azure-blob-for-gis-cold-storage/">
+          <span class="rc-title">{% icon "shield" %} AWS S3 Glacier vs Azure Blob Archive for Cold Storage</span>
+          <p>Compare retrieval latency, integrity validation, and cost across the major archive tiers.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/spatial-archival-architecture-tiering-strategy/retention-policy-frameworks/implementing-lifecycle-rules-for-shapefile-archives/">
+          <span class="rc-title">{% icon "architecture" %} Implementing Lifecycle Rules for Shapefile Archives</span>
+          <p>Atomic tiering and integrity validation for legally defensible, automated retention.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/format-conversion-pipeline-automation/crs-synchronization-in-pipelines/automating-crs-transformations-in-etl-pipelines/">
+          <span class="rc-title">{% icon "conversion" %} Automating CRS Transformations in ETL Pipelines</span>
+          <p>Keep coordinate reference systems synchronized across every stage of an archival pipeline.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/format-conversion-pipeline-automation/geoparquet-vs-flatgeobuf-for-cold-archive-retrieval/">
+          <span class="rc-title">{% icon "conversion" %} GeoParquet vs FlatGeobuf for Cold-Archive Retrieval</span>
+          <p>A head-to-head decision matrix for columnar analytics versus range-streamed feature reads.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/compression-tuning-storage-optimization/zstd-vs-lz4-vs-snappy-compression-trade-offs-for-spatial-files/">
+          <span class="rc-title">{% icon "compression" %} ZSTD vs LZ4 vs Snappy for Spatial Files</span>
+          <p>Match codec ratio, throughput, and decompression latency to each storage tier.</p>
+        </a>
+        <a class="related-card" href="{{ site.url }}/spatial-archive-cost-modeling/">
+          <span class="rc-title">{% icon "database" %} Spatial Archive Cost Modeling</span>
+          <p>Model storage, retrieval, penalties, and compression ratio as one auditable budget.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

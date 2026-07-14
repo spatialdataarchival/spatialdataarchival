@@ -1,0 +1,31 @@
+{
+  "name": "spatialdataarchival.org",
+  "version": "1.0.0",
+  "description": "Spatial Data Archival & Cold Storage Optimization — operational reference site.",
+  "type": "module",
+  "scripts": {
+    "qa": "node scripts/qa-codeblocks.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "prebuild": "npm run qa && npm run icons",
+    "build": "eleventy",
+    "serve": "eleventy --serve --port=8080",
+    "clean": "rm -rf _site",
+    "deploy": "npm run build && wrangler deploy",
+    "cf:preview": "wrangler dev"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "js-yaml": "^4.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "png-to-ico": "^2.1.8",
+    "sharp": "^0.33.5",
+    "wrangler": "^4.95.0"
+  },
+  "dependencies": {
+    "katex": "^0.16.11",
+    "mermaid": "^11.4.1"
+  }
+}
